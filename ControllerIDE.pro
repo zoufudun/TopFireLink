@@ -23,6 +23,8 @@ SOURCES += \
     domoduleconfigdialog.cpp \
     hostmodule.cpp \
     hostmoduleconfigdialog.cpp \
+    loopmodule.cpp \
+    loopmoduleconfigdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     projectmanager.cpp \
@@ -36,6 +38,8 @@ HEADERS += \
     domoduleconfigdialog.h \
     hostmodule.h \
     hostmoduleconfigdialog.h \
+    loopmodule.h \
+    loopmoduleconfigdialog.h \
     mainwindow.h \
     projectmanager.h \
     thememanager.h
