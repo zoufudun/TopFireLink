@@ -30,3 +30,27 @@
 *.exe
 *.out
 *.app
+
+*.pro.user
+.qtcreator/
+build/
+.vscode/
+
+# 忽略 Qt Creator 用户配置文件
+*.pro.user*
+*.pro.user
+*.user
+
+# Qt编译输出
+build-*/                 # Qt Creator构建目录
+CMakeLists.txt.user*     # CMake用户配置
+*.autosave               # Qt自动保存文件
+moc_*.cpp                # Qt MOC生成文件
+ui_*.h                   # Qt UI编译文件
+qrc_*.cpp                # Qt资源编译文件
+Makefile                 # 生成的Makefile
+*.o                      # 目标文件
+*.so                     # 共享库
+*.dll                    # Windows动态库
+*.exe                    # 可执行文件
+*.pro.user*              # Qt Creator用户配置
