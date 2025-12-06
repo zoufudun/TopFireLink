@@ -10,7 +10,6 @@
 #include <QStandardItem>
 #include <QString>
 
-
 // 组件信息结构体
 struct ComponentInfo {
   QString name;
@@ -33,6 +32,9 @@ public:
   void showMoveComponentDialog(QStandardItem *item);
   void moveComponentUp(QStandardItem *item);
   void moveComponentDown(QStandardItem *item);
+
+  // 获取组件配置部件
+  QWidget *getComponentConfigWidget(QStandardItem *item);
 
   // 添加DI模块配置对话框
   void showDIModuleConfigDialog(QStandardItem *item);

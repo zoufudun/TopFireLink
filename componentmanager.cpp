@@ -14,9 +14,13 @@
 #include <QVBoxLayout>
 
 #include "dimoduleconfigdialog.h"   // 添加DI模块配置对话框头文件
+#include "dimoduleconfigwidget.h"   // 添加DI模块配置部件头文件
 #include "domoduleconfigdialog.h"   // 添加DO模块配置对话框头文件
+#include "domoduleconfigwidget.h"   // 添加DO模块配置部件头文件
 #include "hostmoduleconfigdialog.h" // 添加主机模块配置对话框头文件
+#include "hostmoduleconfigwidget.h" // 添加主机模块配置部件头文件
 #include "loopmoduleconfigdialog.h" // 添加回路模块配置对话框头文件
+#include "loopmoduleconfigwidget.h" // 添加回路模块配置部件头文件
 
 ComponentManager::ComponentManager(QObject *parent) : QObject(parent) {
   // 初始化组件类型列表
@@ -210,6 +214,27 @@ void ComponentManager::showAddComponentDialog() {
       emit componentAdded(component);
     }
   }
+}
+
+QWidget *ComponentManager::getComponentConfigWidget(QStandardItem *item) {
+  if (!item) {
+    return nullptr;
+  }
+
+  // 根据组件类型显示不同的配置对话框
+  QString componentType = item->data(Qt::UserRole).toString();
+
+  if (componentType == "DIModule") {
+    return new DIModuleConfigWidget(m_diModule);
+  } else if (componentType == "DOModule") {
+    return new DOModuleConfigWidget(m_doModule);
+  } else if (componentType == "HostModule") {
+    return new HostModuleConfigWidget(getOrCreateHostModule(item));
+  } else if (componentType == "LoopModule") {
+    return new LoopModuleConfigWidget(m_loopModule);
+  }
+
+  return new QLabel("此组件暂无详细配置界面或尚未实现。");
 }
 
 void ComponentManager::showConfigureComponentDialog(QStandardItem *item) {

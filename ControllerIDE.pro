@@ -25,10 +25,15 @@ SOURCES += \
     hostmoduleconfigdialog.cpp \
     loopmodule.cpp \
     loopmoduleconfigdialog.cpp \
+    loopmoduleconfigwidget.cpp \
     main.cpp \
     mainwindow.cpp \
     projectmanager.cpp \
-    thememanager.cpp
+    thememanager.cpp \
+    newprojectwizard.cpp \
+    hostmoduleconfigwidget.cpp \
+    dimoduleconfigwidget.cpp \
+    domoduleconfigwidget.cpp
 
 HEADERS += \
     componentmanager.h \
@@ -40,9 +45,14 @@ HEADERS += \
     hostmoduleconfigdialog.h \
     loopmodule.h \
     loopmoduleconfigdialog.h \
+    loopmoduleconfigwidget.h \
     mainwindow.h \
     projectmanager.h \
-    thememanager.h
+    thememanager.h \
+    newprojectwizard.h \
+    hostmoduleconfigwidget.h \
+    dimoduleconfigwidget.h \
+    domoduleconfigwidget.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
